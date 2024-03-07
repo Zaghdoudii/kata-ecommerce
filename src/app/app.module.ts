@@ -9,6 +9,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaymentCardComponent } from './components/payment-card/payment-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     ProductsComponent,
     CartComponent,
-    FilterPipe
+    FilterPipe,
+    PaymentCardComponent
   ],
   imports: [
     BrowserModule,

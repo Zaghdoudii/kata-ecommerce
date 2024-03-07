@@ -1,24 +1,21 @@
-
-
 <div class="container padding-bottom-3x mb-1">
-
-
-    <!-- Shopping Cart-->
-    <div class="table-responsive shopping-cart">
+     <!-- Shopping Cart-->
+    
+     <div class="table-responsive shopping-cart">
 
         <table class="table">
+
             <thead>
                 <tr *ngIf="products.length !=0">
                     <th>Product</th>
                     <th class="text-center">Quantity</th>
                     <th class="text-center">Subtotal</th>
                     <th class="text-center">Discount</th>
-                    <th class="text-center"><a class="btn btn-sm btn-outline-danger" (click)="emptycart()">Clear
-                            Cart</a></th>
+                    <th class="text-center"><a class="btn btn-sm btn-outline-danger" (click)="emptycart()">Clear Cart</a></th>
                 </tr>
             </thead>
-            <tbody>
 
+            <tbody>
                 <tr *ngFor="let item of products; let i = index">
                     <td>
                         <div class="product-item">
@@ -37,10 +34,10 @@
                     <td class="text-center"><a class="remove-from-cart" (click)="removeItem(item)" data-toggle="tooltip"
                             title="" data-original-title="Remove item"><i class="fa fa-trash"></i></a></td>
                 </tr>
-
-
             </tbody>
         </table>
+
+        <!-- If  cart is empty -->
         <ng-container *ngIf="products.length ==0">
             <div class="container">
                 <div class="card">
@@ -54,31 +51,33 @@
             </div>
         </ng-container>
     </div>
+
     <div class="shopping-cart-footer" *ngIf="products.length !=0">
-
-
         <div class="column text-lg">Subtotal: <span class="text-medium">${{grandTotal}}</span></div>
     </div>
+
     <div class="shopping-cart-footer">
         <div class="column"><button routerLink="/products" class="btn btn-outline-dark btn-sm">Shop More</button></div>
         <div class="column">
+
             <a class="btn btn-outline-dark btn-sm" href="#" data-toast="" data-toast-type="success"
                 data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart"
                 data-toast-message="is updated successfully!">Update Cart</a>
+
             <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
                 data-bs-target="#exampleModal">
-                Checkout
+                Payment
             </button>
         </div>
     </div>
 
-    <!-- Button trigger modal -->
 
 
     <!-- Modal -->
     <div class="modal" id="exampleModal"   aria-hidden="true">
         <div class="modal-dialog"id="exampleModal"   aria-hidden="true">
             <div class="modal-content">
+                <app-payment-card></app-payment-card>
             </div>
         </div>
     </div>
