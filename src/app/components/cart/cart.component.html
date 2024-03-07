@@ -1,1 +1,84 @@
-<p>cart works!</p>
+
+
+<div class="container padding-bottom-3x mb-1">
+
+
+    <!-- Shopping Cart-->
+    <div class="table-responsive shopping-cart">
+
+        <table class="table">
+            <thead>
+                <tr *ngIf="products.length !=0">
+                    <th>Product</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Subtotal</th>
+                    <th class="text-center">Discount</th>
+                    <th class="text-center"><a class="btn btn-sm btn-outline-danger" (click)="emptycart()">Clear
+                            Cart</a></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let item of products; let i = index">
+                    <td>
+                        <div class="product-item">
+                            <a class="product-thumb" href="#"><img src="{{item.image}}" alt="Product"></a>
+                            <div class="product-info">
+                                <h4 class="product-title"><a href="#">{{item.title}}</a></h4>
+                                <span><em>Description :</em> {{item.description}}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <span>1</span>
+                    </td>
+                    <td class="text-center text-lg text-medium">${{item.price}}</td>
+                    <td class="text-center text-lg text-medium">--</td>
+                    <td class="text-center"><a class="remove-from-cart" (click)="removeItem(item)" data-toggle="tooltip"
+                            title="" data-original-title="Remove item"><i class="fa fa-trash"></i></a></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <ng-container *ngIf="products.length ==0">
+            <div class="container">
+                <div class="card">
+                </div>
+                <div class="center">
+                    <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+                        alt="">
+                    <h4>Your cart is empty!</h4>
+                    <h6>Add item to it now</h6>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="shopping-cart-footer" *ngIf="products.length !=0">
+
+
+        <div class="column text-lg">Subtotal: <span class="text-medium">${{grandTotal}}</span></div>
+    </div>
+    <div class="shopping-cart-footer">
+        <div class="column"><button routerLink="/products" class="btn btn-outline-dark btn-sm">Shop More</button></div>
+        <div class="column">
+            <a class="btn btn-outline-dark btn-sm" href="#" data-toast="" data-toast-type="success"
+                data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart"
+                data-toast-message="is updated successfully!">Update Cart</a>
+            <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Payment
+            </button>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal" id="exampleModal"   aria-hidden="true">
+        <div class="modal-dialog"id="exampleModal"   aria-hidden="true">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
