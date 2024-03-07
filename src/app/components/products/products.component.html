@@ -1,13 +1,40 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <span>Search by category :</span>
+        </div>
+        <div class="item">
+            <a [ngClass]="{'selected': selectedItem === ''}" (click)="filter('')">
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a [ngClass]="{'selected': selectedItem === 'electronics'}" (click)="filter('electronics')">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a [ngClass]="{'selected': selectedItem === 'fashion'}" (click)="filter('fashion')">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a [ngClass]="{'selected': selectedItem === 'jewelery'}" (click)="filter('jewelery')">
+                <h6>Jewllery</h6>
+            </a>
+        </div>
+    </div>
+</div>
 
 <section class="section-products">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of filterCategory ">
+            <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of filterCategory | filter:searchKey:'title'">
                 <div class="single-product">
                     <div class="part-1">
                         <img class="imgg" src="{{ product.image }}" alt="">
                         <ul>
-                            <li><a ><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a (click)=addtocart(product)><i class="fas fa-shopping-cart"></i></a></li>
                             <li><a><i class="fas fa-heart"></i></a></li>
                         </ul>
                     </div>
