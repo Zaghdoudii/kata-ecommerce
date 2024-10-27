@@ -1,5 +1,7 @@
 # Mini E-commerce Product Gallery Frontend Kata
 
+**Deployment Link**: [https://zaghdoudii.github.io/kata-ecommerce/products](https://zaghdoudii.github.io/kata-ecommerce/products)
+
 ## Overview
 This project is a frontend application aimed at providing a user-friendly interface for browsing and purchasing products. It utilizes Angular v16.0.0, Node v18.12.0, Typescript v5.0.2, and Bootstrap v5.3.3
 
@@ -32,6 +34,23 @@ To run the application, follow these steps:
     ```
 5. Access http://localhost:8080 in your preferred web browser.
 
+## Deployment on GitHub Pages
+To deploy this Angular application on GitHub Pages, follow these steps:
+1. **Check angular.json Configuration**:
+In the `angular.json` file, ensure that the outputPath under "architect": { "build": { "options": {"outputPath": ... } } matches docs to ensure the build is correctly directed.
+
+2. **Build the Project for GitHub Pages**:
+   Run the following command to build the project and specify the output path (`docs`) and base URL (`/kata-ecommerce/`), which should match your repository name:
+   ```
+   ng build --output-path docs --base-href /kata-ecommerce/
+   ```
+3. **Push to GitHub**:
+Commit and push the changes to your GitHub repository. Once the docs folder is pushed, GitHub Pages will recognize it.
+
+5. **Activate GitHub Pages**:
+Go to your GitHub repository's settings, find the GitHub Pages section, and set the source to the docs folder.
+
+**The application should now be available at : https://<username>.github.io/kata-ecommerce**
 
 ## Contributor
-Zaghdoudi Mohamed
+[Zaghdoudi Mohamed](mailto:zaghdouudi@gmail.com)
