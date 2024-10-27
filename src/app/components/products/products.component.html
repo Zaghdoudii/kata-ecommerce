@@ -4,26 +4,29 @@
             <span>Search by category :</span>
         </div>
         <div class="item">
-            <a [ngClass]="{'selected': selectedItem === ''}" (click)="filter('')">
+            <a class="cursor-pointer" [ngClass]="{'selected': selectedItem === ''}" (click)="filter('')">
                 <h6>All products</h6>
             </a>
         </div>
         <div class="item">
-            <a [ngClass]="{'selected': selectedItem === 'electronics'}" (click)="filter('electronics')">
+            <a class="cursor-pointer" [ngClass]="{'selected': selectedItem === 'electronics'}"
+                (click)="filter('electronics')">
                 <h6>Electronics</h6>
             </a>
         </div>
         <div class="item">
-            <a [ngClass]="{'selected': selectedItem === 'fashion'}" (click)="filter('fashion')">
+            <a class="cursor-pointer" [ngClass]="{'selected': selectedItem === 'fashion'}" (click)="filter('fashion')">
                 <h6>Fashion</h6>
             </a>
         </div>
         <div class="item">
-            <a [ngClass]="{'selected': selectedItem === 'jewelery'}" (click)="filter('jewelery')">
+            <a class="cursor-pointer" [ngClass]="{'selected': selectedItem === 'jewelery'}"
+                (click)="filter('jewelery')">
                 <h6>Jewllery</h6>
             </a>
         </div>
     </div>
+
 </div>
 
 <section class="section-products">

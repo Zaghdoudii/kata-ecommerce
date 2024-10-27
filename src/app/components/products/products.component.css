@@ -155,3 +155,7 @@ a:hover {
     font-weight: bolder;
     text-decoration: underline;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
